@@ -1,0 +1,127 @@
+body {
+	font-family: "Open Sans", sans-serif;
+}
+a, a:visited, a:active {
+	text-decoration: none
+}
+
+/*TITLE*/
+#title {
+	font-size: 1.8em;
+	font-family: "PT Serif", serif;
+	font-weight: bold;
+	max-width: 800px;
+	margin: auto;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/*TIMER*/
+#timer {
+	display: table;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.stopgo {
+	cursor: pointer;
+}
+
+/*CATEGORIES*/
+#categories {
+	font-size: .9em;
+	max-width: 600px;
+	margin: auto;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+	height: 40px;
+	text-align: center;
+	color: #fff;
+}
+#categories .label {
+	display: inline;
+  padding: 6px;
+	border-radius: 4px;
+	margin-right: 12px;
+}
+#categories .label.misogyny {
+	background: #df5a49;
+}
+#categories .label.deshdrohi {
+	background: #2980b9;
+}
+#categories .label.profanity {
+	background: #45b29d;
+}
+#categories .label.violence {
+	background: #efc94c;
+}
+
+
+/*TWEETS*/
+#tweets {
+  max-width: 600px;
+  margin: auto;
+}
+.tweet {
+	border-bottom: 1px solid #e6ecf0;
+	padding: 9px 12px;
+	font-size: .9em;
+	cursor: pointer;
+}
+.tweet:hover {
+	background: #eee;
+}
+
+.tweet .col {
+	vertical-align: top;
+	display: inline-block;
+}
+.tweet .left-col {
+	width: 10%;
+	max-width: 48px;
+}
+.tweet .left-col img {
+	width: 100%;
+	border-radius: 5px;
+}
+.tweet .right-col {
+	width: 87%;
+	max-width: 552px;
+	padding-left: 2%;
+}
+.tweet .right-col .user {
+	margin-bottom: 4px;
+}
+
+.tweet .right-col .user .name {
+	font-weight: bold;
+	margin-right: 4px;
+	color: #14171a;
+}
+.tweet .right-col .user .handle {
+	font-size: .9em;
+	color: #657786;
+}
+.tweet .text a {
+	color: #4E78A0;
+}
+.tweet .text a:hover {
+	text-decoration: underline;
+}
+.tweet .text .tag {
+	font-weight: bold;
+	font-size: 20px;
+}
+.tweet .text .tag.deshdrohi {
+	color: #2980b9;
+}
+.tweet .text .tag.misogyny {
+	color: #df5a49;
+}
+.tweet .text .tag.profanity {
+	color: #45b29d;
+}
+.tweet .text .tag.violence {
+	color: #efc94c;
+}
+
