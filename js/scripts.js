@@ -1,4 +1,4 @@
-d3.json("output.json", (error, data) => {
+d3.json("output2.json", (error, data) => {
 	if (error) throw error;
 
   data.forEach(function(d){
