@@ -36,7 +36,8 @@ d3.json("output.json", (error, data) => {
     var baseTime = 1;
 
     // set initial
-    var sec = data[0].seconds;
+    var sec = 3600 * 6;
+    // var sec = data[0].seconds;
     $("body").attr("data-sec", sec);
 
     var interval = setInterval(startInterval, baseTime);
@@ -57,7 +58,7 @@ d3.json("output.json", (error, data) => {
       $("#timer .ampm").text(timeObj.hrs > 11 ? "p.m." : "a.m.");
 
       var tweet = data.filter(d => {
-        return d.seconds == sec && d.flag == 1 && d.retweet == false;
+        return d.seconds == sec;
       });
       if (tweet.length > 0) {        
         var t = tweet[0];
