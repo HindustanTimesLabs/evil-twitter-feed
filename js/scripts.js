@@ -1,6 +1,24 @@
 d3.json("output.json", (error, data) => {
 	if (error) throw error;
 
+  data.forEach(function(d){
+
+    if (
+      d.tags.sexual.length == 0 &&
+      d.tags.racial.length == 0 &&
+      d.tags.general.length == 0 &&
+      d.tags.political.length == 0 &&
+      d.tags.violent.length == 0
+    ) {
+      d.flag = 0;
+    } else {
+      d.flag = 1;
+    }
+
+    return d;
+
+  });
+
   // a test
   // var bad = data.filter(function(d){ return d.flag == 1; });
   // console.log(bad);
@@ -24,7 +42,7 @@ d3.json("output.json", (error, data) => {
     var interval = setInterval(startInterval, baseTime);
 
     function startInterval() {
-      sec = sec + 1;
+      sec = sec + 1 == 86400 ? 0 : sec +1;
       $("body").attr("data-sec", sec);
 
       var timeObj = calcTime(sec);
@@ -43,10 +61,16 @@ d3.json("output.json", (error, data) => {
       });
       if (tweet.length > 0) {        
         var t = tweet[0];
+        console.log(t);
+
+        var dd = $("#timer .hour").text().trim() + ":" + $("#timer .minute").text().trim() + " " + $("#timer .ampm").text().trim();
+        // var dds = dd.split(":");
+        // console.log(dds[2].split("&nbsp;"));
+        // // dd = dds[0] + ":" + dds[1] + " " + dds[2].split(" ")[1];
         
         $("#tweets").prepend("<div data-link='" + t.url + "' class='tweet'> \
         	<div class='col left-col'><a class='block-link' target='_blank' href='http://www.twitter.com/" + t.user_handle + "/'><img src='" + t.user_img + "' /></div> \
-        	<div class='col right-col'><div class='user'><span class='name'>" + t.user_name + "</span><span class='handle'>@" + t.user_handle + "</span></a></div><div class='text'>" + t.text_html + "</div></div> \
+        	<div class='col right-col'><div class='user'><span class='name'>" + t.user_name + "</span><span class='handle'>@" + t.user_handle + "</span></a>&nbsp;<span style='font-size:.7em;'>&bull;</span>&nbsp;<span class='date-display'><a href='" + t.url + "'>" + dd + "</a></span></div><div class='text'>" + t.text_html + "</div></div> \
         	</div>");
       }
     }
