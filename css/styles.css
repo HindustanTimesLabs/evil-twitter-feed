@@ -32,7 +32,7 @@ a, a:visited, a:active {
 	max-width: 600px;
 	margin: auto;
 	margin-bottom: 20px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 2px solid #eee;
 	height: 40px;
 	text-align: center;
 	color: #fff;
@@ -42,19 +42,25 @@ a, a:visited, a:active {
   padding: 6px;
 	border-radius: 4px;
 	margin-right: 12px;
+	background: #000;
 }
-#categories .label.misogyny {
-	background: #df5a49;
-}
-#categories .label.deshdrohi {
-	background: #2980b9;
-}
-#categories .label.profanity {
+
+#categories .label.general {
 	background: #45b29d;
 }
-#categories .label.violence {
+#categories .label.political {
+	background: #2980b9;
+}
+#categories .label.racial {
 	background: #efc94c;
 }
+#categories .label.sexual {
+	background: #df5a49;
+}
+#categories .label.violent {
+	background: #A65DFF;
+}
+
 
 
 /*TWEETS*/
@@ -98,9 +104,15 @@ a, a:visited, a:active {
 	margin-right: 4px;
 	color: #14171a;
 }
-.tweet .right-col .user .handle {
+.tweet .right-col .user .handle, .tweet .right-col .user .date-display {
 	font-size: .9em;
 	color: #657786;
+}
+.tweet .right-col .user .date-display a {
+	color: #657786;	
+}
+.tweet .right-col .user .date-display a:hover {
+	text-decoration: underline;
 }
 .tweet .text a {
 	color: #4E78A0;
@@ -109,19 +121,26 @@ a, a:visited, a:active {
 	text-decoration: underline;
 }
 .tweet .text .tag {
-	font-weight: bold;
-	font-size: 20px;
+	/*font-weight: bold;*/
+	padding: 1px 2px;
+	color: #fff;
+	background: #000;
+	border-radius: 4px;
+	/*font-size: 20px;*/
 }
-.tweet .text .tag.deshdrohi {
-	color: #2980b9;
+.tweet .text .tag.general {
+	background: #45b29d;
 }
-.tweet .text .tag.misogyny {
-	color: #df5a49;
+.tweet .text .tag.political {
+	background: #2980b9;
 }
-.tweet .text .tag.profanity {
-	color: #45b29d;
+.tweet .text .tag.racial {
+	background: #efc94c;
 }
-.tweet .text .tag.violence {
-	color: #efc94c;
+.tweet .text .tag.sexual {
+	background: #df5a49;
+}
+.tweet .text .tag.violent {
+	background: #A65DFF;
 }
 
