@@ -1,23 +1,23 @@
-d3.json("output2.json", (error, data) => {
+d3.json("output.json", (error, data) => {
 	if (error) throw error;
 
-  data.forEach(function(d){
+  // data.forEach(function(d){
 
-    if (
-      d.tags.sexual.length == 0 &&
-      d.tags.racial.length == 0 &&
-      d.tags.general.length == 0 &&
-      d.tags.political.length == 0 &&
-      d.tags.violent.length == 0
-    ) {
-      d.flag = 0;
-    } else {
-      d.flag = 1;
-    }
+  //   if (
+  //     d.tags.sexual.length == 0 &&
+  //     d.tags.racial.length == 0 &&
+  //     d.tags.general.length == 0 &&
+  //     d.tags.political.length == 0 &&
+  //     d.tags.violent.length == 0
+  //   ) {
+  //     d.flag = 0;
+  //   } else {
+  //     d.flag = 1;
+  //   }
 
-    return d;
+  //   return d;
 
-  });
+  // });
 
   // a test
   // var bad = data.filter(function(d){ return d.flag == 1; });
@@ -25,7 +25,7 @@ d3.json("output2.json", (error, data) => {
 
   var categories = Object.keys(data[0].tags);
   categories.forEach(function(d){
-  	$("#categories").append("<div class='label " + d + "'>" + strings.toStartCase(d) + "</div>")
+  	$("#categories").append("<div class='cat " + d + "'>" + strings.toStartCase(d) + "</div>")
   })
 
   data = _.sortBy(data, "seconds");
@@ -64,10 +64,13 @@ d3.json("output2.json", (error, data) => {
         console.log(t);
 
         var dd = $("#timer .hour").text().trim() + ":" + $("#timer .minute").text().trim() + " " + $("#timer .ampm").text().trim();
-        // var dds = dd.split(":");
-        // console.log(dds[2].split("&nbsp;"));
-        // // dd = dds[0] + ":" + dds[1] + " " + dds[2].split(" ")[1];
         
+        
+
+        t.text_html = t.text_html.replaceAll('<span class="tag tag-<',"<").replaceAll('</span>al">',"</span>").replaceAll('<span class="tag tag-sexual">sex.</span><span class="tag tag-sexual">sex.</span>/span>', '<span class="tag tag-sexual">sex.</span>').replaceAll('<span class="tag tag-<span class="tag tag-sexual">sex.</span>ual">ass</span>','<span class="tag tag-sexual">ass</span>');
+
+        console.log(t.text_html);
+
         $("#tweets").prepend("<div data-link='" + t.url + "' class='tweet'> \
         	<div class='col left-col'><a class='block-link' target='_blank' href='http://www.twitter.com/" + t.user_handle + "/'><img src='" + t.user_img + "' /></div> \
         	<div class='col right-col'><div class='user'><span class='name'>" + t.user_name + "</span><span class='handle'>@" + t.user_handle + "</span></a>&nbsp;<span style='font-size:.7em;'>&bull;</span>&nbsp;<span class='date-display'><a href='" + t.url + "'>" + dd + "</a></span></div><div class='text'>" + t.text_html + "</div></div> \
@@ -134,3 +137,8 @@ $(document).on("click", ".tweet", function(e){
 	}
 
 });
+
+String.prototype.replaceAll = function(search, replacement) {
+  var target = this;
+  return target.replace(new RegExp(search, "g"), replacement);
+};

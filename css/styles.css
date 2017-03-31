@@ -7,12 +7,17 @@ a, a:visited, a:active {
 
 /*TITLE*/
 #title {
-	font-size: 1.8em;
 	font-family: "PT Serif", serif;
 	font-weight: bold;
-	max-width: 800px;
 	margin: 20px auto;
 	text-align: center;
+}
+#title div {
+	margin: auto;
+}
+#title .headline {
+	font-size: 1.8em;
+	max-width: 800px;
 }
 
 /*TIMER*/
@@ -36,27 +41,27 @@ a, a:visited, a:active {
 	text-align: center;
 	color: #fff;
 }
-#categories .label {
+#categories .cat {
 	display: inline;
-  padding: 6px;
+  padding: 3px 6px;
 	border-radius: 4px;
 	margin-right: 12px;
 	background: #000;
 }
 
-#categories .label.general {
+#categories .cat.general {
 	background: #45b29d;
 }
-#categories .label.political {
+#categories .cat.political {
 	background: #2980b9;
 }
-#categories .label.racial {
+#categories .cat.racial {
 	background: #efc94c;
 }
-#categories .label.sexual {
+#categories .cat.sexual {
 	background: #df5a49;
 }
-#categories .label.violent {
+#categories .cat.violent {
 	background: #A65DFF;
 }
 
@@ -128,19 +133,19 @@ a, a:visited, a:active {
 	border-radius: 4px;
 	/*font-size: 20px;*/
 }
-.tweet .text .tag.general {
+.tweet .text .tag.tag-general {
 	background: #45b29d;
 }
-.tweet .text .tag.political {
+.tweet .text .tag.tag-political {
 	background: #2980b9;
 }
-.tweet .text .tag.racial {
+.tweet .text .tag.tag-racial {
 	background: #efc94c;
 }
-.tweet .text .tag.sexual {
+.tweet .text .tag.tag-sexual {
 	background: #df5a49;
 }
-.tweet .text .tag.violent {
+.tweet .text .tag.tag-violent {
 	background: #A65DFF;
 }
 
