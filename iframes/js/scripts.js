@@ -1,8 +1,24 @@
-$(".person-container").each(function(i, d){
+// $(".timer-date").hide();
+$(".timer").hide();
+$(".categories").hide();
+$(".time-chart").hide();
 
-  doit(d);
+$(document).on("click",".warning",function(){
+  $(".person-container").each(function(i, d){
 
-});
+    doit(d);
+
+    // $(".timer-date").show();
+    $(".timer").show();
+    $(".categories").show();
+    $(".time-chart").show();
+
+    $(".stopgo").removeClass("warning").addClass("go");
+    $(".stopgo").html("<i class='fa fa-pause' aria-hidden='true'></i> Pause");
+    // interval = setInterval(startInterval, baseTime);
+
+  });  
+})
 
 
 function doit(container){
