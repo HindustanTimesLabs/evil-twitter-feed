@@ -77,6 +77,9 @@ function doit(container){
     });
 
     drawTimeChart(bar_data, selector);
+    // $(window).smartresize(function(){
+    //   drawTimeChart(bar_data, selector);
+    // });
 
     count();
 
@@ -88,13 +91,13 @@ function doit(container){
       var sec = 0;
       var sec = data[0].seconds;
       // console.log(sec);
-      // $("body").attr("data-sec", sec);
+      $("body").attr("data-sec", sec);
 
       var interval = setInterval(startInterval, baseTime);
 
       function startInterval() {
         sec = sec + 1 == 86400 ? 0 : sec +1;
-        // $("body").attr("data-sec", sec);
+        $("body").attr("data-sec", sec);
 
         var timeObj = calcTime(sec);
         var horas = (timeObj.hrs == 0 ? 12 : timeObj.hrs > 12 ? timeObj.hrs - 12 : timeObj.hrs).toString()

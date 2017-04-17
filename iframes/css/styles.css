@@ -1,6 +1,9 @@
 body {
 	font-family: "Open Sans", sans-serif;
 	background: #fff;
+	margin: 0;
+	max-width: 600px;
+	width: 100%;
 }
 a:hover {
 	text-decoration: none;
@@ -9,70 +12,28 @@ a, a:visited, a:active {
 	text-decoration: none
 }
 
-/*TITLE*/
-.title {
-	font-family: "PT Serif", serif;
-	margin: 20px auto;
-	text-align: center;
-	max-width: 800px;
-	margin-bottom: 60px;
-}
-.title div {
-	margin: auto;
-}
-.title .headline {
-  font-weight: bold;
-  font-size: 2em;
-  margin-bottom: 40px;
-  line-height: 1.5em;
-}
-.blue-line {
-	width: 220px;
-  margin: .8em auto;
-  border: 2px solid #48a2d7;
-}
-.title .byline {
-	font-size: 1.3em;
-}
-.title .dateline {
-	font-size: 1.1em;
-}
-.title .subhead {
-  margin-top: 40px;
-}
-
-/*COPY*/
-.copy {
-	margin: 0 auto;
-	max-width: 600px;
-}
-.copy p {
-  margin-bottom: 22px;
-}
-
 /*PERSON CONTAINER*/
 .person-container {
 	margin: 0 auto;
 	display: table;
-	width: 100%;
-	max-width: 600px;
-	margin-top: 80px;
+	/*width: 100%;
+	max-width: 600px;*/
 	margin-bottom: 30px;
 }
 
 /*TIMER*/
 .timer {
-	display: table;
-	margin: 0 auto;
-	margin-bottom: 20px;
+	/*text-align: center;*/
+	margin-bottom: 10px;
 }
 .timer-head, .time, .timer-date, .timer-handle {
-	text-align: center;
+	/*text-align: center;*/
 }
 .timer-head {
 	font-weight: bold;
-	font-size: 1.6em;
+	font-size: 1.4em;
 	line-height: 1.2em;
+	margin-bottom: 10px;
 }
 .timer-handle {
 	font-size: .8em;
@@ -92,7 +53,7 @@ a, a:visited, a:active {
 	text-decoration: underline;
 }
 .timer-date {
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 .time-chart-title {
   font-size: .8em;
@@ -106,7 +67,9 @@ a, a:visited, a:active {
   background: #eee;
   text-align: center;
   font-size: 1.2em;
-  margin-top: 10px;
+	margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .stopgo:hover {
 	background: #ddd;
@@ -116,22 +79,22 @@ a, a:visited, a:active {
 /*CATEGORIES*/
 .categories {
 	font-size: .9em;
-	max-width: 600px;
-	margin: auto;
+	/*width: 100%;
+	max-width: 600px;*/
+	/*margin: auto;*/
 	margin-bottom: 5px;
 	border-bottom: 2px solid #eee;
-	height: auto;
-	padding-bottom: 10px;
-	text-align: center;
+	padding-bottom: 5px;
+	/*text-align: center;*/
 	color: #fff;
 }
 .cat {
 	display: inline-block;
   padding: 3px 6px;
-  margin-bottom: 5px;
 	border-radius: 4px;
 	margin-right: 12px;
 	background: #000;
+	margin-bottom: 5px;
 }
 
 .cat.other, .tweet .text .tag.tag-other {
@@ -195,8 +158,9 @@ a, a:visited, a:active {
 
 /*TWEETS*/
 .tweets {
-	height: 350px;
-  max-width: 600px;
+	height: 250px;
+	/*width: 100%;
+  max-width: 600px;*/
   margin: auto;
   overflow: hidden;
 }
@@ -267,33 +231,18 @@ a.block-link:hover .handle {
 	color: #fff;
 }
 
-/* Large Devices, Wide Screens */
-@media only screen and (max-width: 1200px) {
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (max-width: 992px) {
-}
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
-	.stopgo {
-		width: 100%;
-	}
+@media only screen and (max-width: 420px) {
 	.x.axis {
 		font-size: .5em;
 	}
-	.cat {
+	.categories {
 		font-size: .8em;
 	}
 }
-
-/* Custom, iPhone Retina */
-@media only screen and (max-width: 320px) {
-}
-
-
