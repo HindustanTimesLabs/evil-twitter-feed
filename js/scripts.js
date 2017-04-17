@@ -12,7 +12,7 @@ function doit(container){
   var selector = "." + $(container).attr("class").split(" ").join(".");
   // console.log(selector);
 
-  d3.json(data_path, (error, data) => {
+  d3.json(data_path, function(error, data) {
     if (error) throw error;
 
     console.log("Total tweets: " + data.length);
@@ -86,7 +86,7 @@ function doit(container){
       // set initial
       // var sec = 3600 * 6;
       var sec = 0;
-      var sec = data[0].seconds;
+      // var sec = data[0].seconds;
       // console.log(sec);
       // $("body").attr("data-sec", sec);
 
@@ -108,7 +108,7 @@ function doit(container){
         $(selector + " .timer .second").text(strings.numberPrependZeros(timeObj.sec, 2));
         $(selector + " .timer .ampm").text(timeObj.hrs > 11 ? "p.m." : "a.m.");
 
-        var tweet = data.filter(d => {
+        var tweet = data.filter(function(d) {
           return d.seconds == sec;
         });
         if (tweet.length > 0) {        
@@ -122,7 +122,7 @@ function doit(container){
         }
       }
 
-      $(selector + " .stopgo").click(function() {
+      $(selector + " .stopgo").on("click", function() {
         if ($(this).hasClass("go")) {
           $(this).removeClass("go").addClass("stop");
           $(this).html("<i class='fa fa-play' aria-hidden='true'></i> Play");

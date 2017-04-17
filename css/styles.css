@@ -196,6 +196,7 @@ a, a:visited, a:active {
 /*TWEETS*/
 .tweets {
 	height: 350px;
+	width: 100%;
   max-width: 600px;
   margin: auto;
   overflow: hidden;
@@ -277,6 +278,12 @@ a.block-link:hover .handle {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+	.title {
+		font-size: .9em;
+	}
+	.copy {
+		font-size: 1em;
+	}
 }
 
 /* Extra Small Devices, Phones */
@@ -289,6 +296,12 @@ a.block-link:hover .handle {
 	}
 	.cat {
 		font-size: .8em;
+	}
+	.time-chart {
+		display: none;
+	}
+	.tweets {
+		font-size: .9em;
 	}
 }
 
