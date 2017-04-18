@@ -50,6 +50,9 @@ a, a:visited, a:active {
 	margin: 0 auto;
 	max-width: 600px;
 }
+.copy-below {
+	margin-top: 280px;
+}
 .copy p {
   margin-bottom: 22px;
 }
@@ -161,6 +164,7 @@ a, a:visited, a:active {
 	margin: 0;
 	color: #fff;
 	font-family: "Open Sans";
+	font-size: .9em;
 }
 
 /*TIME-SERIES CHART*/
@@ -199,9 +203,11 @@ a, a:visited, a:active {
 
 /*TWEETS*/
 .tweets {
-	min-height: 350px;
-	height: 350px;
-	max-height: 350px;
+	position: absolute;
+	margin-bottom: 250px;
+	min-height: 250px;
+	height: 250px;
+	max-height: 250px;
 	width: 100%;
   max-width: 600px;
   margin: auto;

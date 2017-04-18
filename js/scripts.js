@@ -1,12 +1,47 @@
 // get initial height and stick to it
-// $(document).ready(function(){
-//   var h = $(this).height();  
-//   console.log(h);
-//   $("body, html").css({
-//     "height": h,
-//     // "overflow": "scroll"
-//   });
-// })
+$(document).ready(function(){
+  var h = $(this).height();  
+  console.log(h);
+  $("body, html").css({
+    "max-height": h,
+    // "overflow": "scroll"
+  });
+})
+
+
+// Chrome 1+
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+if (isChrome){
+  // $("html, body").css({
+  //   "height": "100%",
+  //   "overflow": "hidden"
+  // });
+
+  // $(window).mousemove(function(){
+  //   console.log("move");
+  //   $("html, body").css({
+  //     "height": "auto",
+  //     "overflow": "auto"
+  //   });
+  // });
+
+  // $(window).on("scrollstop",function(){
+  //   console.log("Stopped scrolling!");
+    
+  //   // $(window).mousestop(function(){
+  //     console.log("stop");
+  //     $("html, body").css({
+  //       // "height": "100%",
+  //       "overflow": "hidden"
+  //     });
+  //   // });
+  // });
+
+  
+
+}
+
 
 
 
