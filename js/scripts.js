@@ -1,3 +1,15 @@
+// get initial height and stick to it
+// $(document).ready(function(){
+//   var h = $(this).height();  
+//   console.log(h);
+//   $("body, html").css({
+//     "height": h,
+//     // "overflow": "scroll"
+//   });
+// })
+
+
+
 $(".person-container").each(function(i, d){
 
   doit(d);
@@ -193,7 +205,7 @@ function doit(container){
 
   });
 
-  // scroll only on mouseover so it doesn't get all wonky
+  //scroll only on mouseover so it doesn't get all wonky
   $(".tweets").mouseover(function(){
     $(this).css("overflow","scroll");
   }).mouseout(function(){

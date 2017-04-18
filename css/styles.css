@@ -1,6 +1,10 @@
+/*html {
+	position: fixed;
+}*/
 body {
 	font-family: "Open Sans", sans-serif;
 	background: #fff;
+	overflow: scroll;
 }
 a:hover {
 	text-decoration: none;
@@ -195,7 +199,9 @@ a, a:visited, a:active {
 
 /*TWEETS*/
 .tweets {
+	min-height: 350px;
 	height: 350px;
+	max-height: 350px;
 	width: 100%;
   max-width: 600px;
   margin: auto;
